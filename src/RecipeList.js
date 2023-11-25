@@ -18,12 +18,12 @@ function RecipeList({recipes, RecipeDelete}) {
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody>
-          {recipes.map((recipe, index) => (
+        <tbody> 
+          {recipes.map((recipe, index) => ( //mapping each recipe indexed into the table body
           <RecipeLayout 
             key={index}
-            recipe={recipe}
-            RecipeDelete={() => RecipeDelete(index)}
+            recipe={recipe} 
+            RecipeDelete={() => RecipeDelete(index)} //providing the delete function to the button
             />))}
         </tbody>
       </table>

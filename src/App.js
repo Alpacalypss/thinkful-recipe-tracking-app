@@ -7,6 +7,7 @@ import RecipeData from "./RecipeData"
 function App() {
   const [recipes, setRecipes] = useState(RecipeData);
   
+  //Creating functions to provide props to be passed to children components.
   const createRecipe = (newRecipe) => {
     setRecipes((currentRecipes) => [...currentRecipes, newRecipe])
   }

@@ -5,6 +5,8 @@ function RecipeCreate({createRecipe}) {
   // TODO: When the form is submitted, a new recipe should be created, and the form contents cleared.
   // TODO: Add the required input and textarea form elements.
   // TODO: Add the required submit and change handlers
+  
+  //Variable to provide object values set to empty strings as a starting point
   const initialState = {
     name: "",
     cuisine: "",
@@ -12,8 +14,10 @@ function RecipeCreate({createRecipe}) {
     ingredients: "",
     preparation: "",
   }
+  //placeholder variable for form submissions
   const [form, setForm] = useState({...initialState})
   
+  //event handler functions for input changes, and submissions via button clicks
   const handleChange = ({target}) => {
     setForm({...form, [target.name]: target.value})
   }
@@ -21,7 +25,7 @@ function RecipeCreate({createRecipe}) {
   const handleSubmit = (event) => {
     event.preventDefault();
     createRecipe(form)
-    setForm({...initialState})
+    setForm({...initialState}) //resetting the default value to its initial state
   }
 
   return (
